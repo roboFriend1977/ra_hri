@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_row="4"
+    android:layout_column="0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background_material_light"
+    >
+
+
+    <!-- Here where the battery info is being received Starts-->
+    <org.ros.android.view.RosTextView
+        android:id="@+id/batteryInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
+
+    <org.ros.android.view.RosTextView
+        android:id="@+id/jobStatusMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
+
+    <!-- Here where the battery info is being received Ends-->
+
+    <!-- Here where the battery info is being received Starts-->
+    <org.ros.android.view.RosTextView
+        android:id="@+id/speedInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+    <!-- Here where the battery info is being received Ends-->
+
+
+    <!-- Here where the battery info is being received Starts-->
+    <org.ros.android.view.RosTextView
+        android:id="@+id/intMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+    <!-- Here where the battery info is being received Ends-->
+
+    <!-- Here where the battery info is being received Starts-->
+    <org.ros.android.view.RosTextView
+        android:id="@+id/gpsMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+    <!-- Here where the battery info is being received Ends-->
+
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:id="@+id/mainPage"
+        android:alpha="0"
+        android:visibility="visible"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mapWrapper"
+            android:alpha="0"
+            >
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </fragment>
+        </RelativeLayout>
+
+
+        <org.ros.android.view.RosImageView
+            android:layout_height="200dp"
+            android:layout_width="400dp"
+            android:id="@+id/livecamView"
+            android:src="@drawable/live_feed_background"
+            android:alpha="0"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="30dp"
+            android:background="#141515">
+        </org.ros.android.view.RosImageView>
+
+        <LinearLayout
+
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/ControlsGroup"
+            android:fadeScrollbars="false"
+            android:visibility="gone"
+            >
+            <ImageButton
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ControlGoHome"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/gohomeblack"
+                />
+            <ImageButton
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ControlStop"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/stopblack"
+                />
+            <ImageButton
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ControlResume"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/resumeblack"
+                />
+            <ImageButton
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ControlWork"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/work"
+                />
+            <ImageButton
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ControlSpeak"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/mic"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/batteryGroup"
+            android:fadeScrollbars="false">
+
+            <TextView
+                android:id="@+id/BatteryProgLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#fff"
+                android:text="@string/batteryPer"
+                android:gravity="center_vertical|center_horizontal"
+
+                />
+            <ImageButton
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/BatteryProg"
+                android:src="@drawable/battery10pre"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:fadeScrollbars="false">
+
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:padding="10dp"
+                android:id="@+id/level2menu"
+                android:src="@drawable/level2menu"
+                />
+
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/LiveFeedButtonSmall"
+                android:src="@drawable/livefeedblue"
+                android:visibility="gone"
+                />
+
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/MapButtonSmall"
+                android:src="@drawable/mapblue"
+                android:visibility="gone"
+                />
+
+
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/ControlsButtonSmall"
+                android:src="@drawable/controlblue"
+                android:visibility="gone"
+                />
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/BatteryButtonSmall"
+                android:src="@drawable/batteryblue"
+                android:visibility="visible"
+                />
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/SpeedButtonSmall"
+                android:src="@drawable/speedblue"
+                android:visibility="visible"
+                />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_marginTop="50dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true"
+            android:fadeScrollbars="false"
+            android:id="@+id/speedBar"
+            >
+
+            <ProgressBar
+                style="@style/Widget.ProgressBar.Vertical"
+                android:id="@+id/SpeedProgPs"
+                android:layout_width="30dip"
+                android:rotation="0"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="-5dp"
+                android:layout_height="130dp"
+                android:indeterminate="false"
+                android:max="50"
+                android:progress="0"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:visibility="visible"
+                />
+            <ProgressBar
+                style="@style/Widget.ProgressBar.Vertical"
+                android:id="@+id/SpeedProgNs"
+                android:layout_width="30dip"
+                android:rotation="180"
+                android:layout_height="130dp"
+                android:indeterminate="false"
+                android:max="50"
+                android:progress="0"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:visibility="visible"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/SpeedProgLabel"
+            android:layout_width="100dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="60dp"
+            android:layout_height="match_parent"
+            android:text="@string/SpeedPer"
+            android:textColor="#fff"
+            android:layout_alignRight="@+id/speedBar"
+            android:gravity="center"
+
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:id="@+id/menu"
+        android:alpha="1"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="130dp"
+            android:paddingLeft="250dp"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:fadeScrollbars="false">
+            <TextView
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Live Feed"
+                android:id="@+id/LiveFeedLabel"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="MAP"
+                android:id="@+id/MapLabel"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="controls"
+                android:id="@+id/ControlsLabel"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="battery"
+                android:id="@+id/BatteryLabel"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/SpeedLabel"
+                android:text="speed"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textSize="15sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:paddingLeft="250dp"
+            android:orientation="horizontal"
+            android:fadeScrollbars="false"
+            android:layout_centerVertical="true"
+            android:id="@+id/linearLayout">
+
+
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:id="@+id/LiveFeedButton"
+                android:src="@drawable/livefeedblack"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:id="@+id/MapButton"
+                android:src="@drawable/mapblack"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:id="@+id/ControlsButton"
+                android:src="@drawable/controlblack"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:id="@+id/BatteryButton"
+                android:src="@drawable/batteryblue"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+            <ImageButton
+                android:background="@drawable/roundcorner"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:layout_width="80dip"
+                android:layout_height="80dip"
+                android:id="@+id/SpeedButton"
+                android:src="@drawable/speedblue"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+        </LinearLayout>
+
+        <ImageButton
+            android:background="@drawable/roundcorner"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:id="@+id/xbutton"
+            android:src="@drawable/x_icon"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+</RelativeLayout>

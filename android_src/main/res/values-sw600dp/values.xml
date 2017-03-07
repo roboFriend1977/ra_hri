@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="isTablet">true</bool>
+    <color name="headercolor">#2979FF</color>
+    <color name="headerText">#FFFFFF</color>
+    <string name="MapLabel">MAP</string>
+    <string name="camLabel">LIVE FEED</string>
+    <string name="speedLabel">SPEED</string>
+</resources>
