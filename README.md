@@ -1,4 +1,4 @@
-# ros_android_hri
+# ra_hri
 components of the Supervisory ROS-android HRI framework 
 
 Content: 
