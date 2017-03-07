@@ -1,0 +1,37 @@
+<launch>
+	<!-- <node pkg="PACKAGE NAME" type="FILE NAME" name="NODE NAME" OTHER ATTRIBUTES /> -->
+
+	<!-- ATTRIBUTES OPTIONS respawn="true"  required ="true"  output="screen" launch−prefix="xterm−e" -->
+
+	<!-- must be in this order, path receiver, conf receiver, path publisher -->
+
+
+	<node 
+		pkg="ros_android_hri" 
+		type="pathConfirmationSub" 
+		name="pathConfirmationSub_ROS"  
+		output="screen" 
+		launch-prefix="gnome-terminal --command"  
+	/>
+	<node 
+		pkg="ros_android_hri" 
+		type="robotPathReceiver" 
+		name="robotPathReceiver_ROS" 
+		output="screen"
+		launch-prefix="gnome-terminal --command"  
+	/>
+
+	<node 
+		pkg="ros_android_hri" 
+		type="robotPathPublisher" 
+		name="robotPathPublisher_ROS"
+		output="screen"
+ />
+
+
+</launch>
+
+
+
+
+

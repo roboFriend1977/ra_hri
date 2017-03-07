@@ -1,0 +1,19 @@
+ros::Publisher rsPublisher;
+
+void updateStatus(int update_id, std::string update_text) { 
+	
+	// wait for subscriber (android) to connect)  
+    ros::Rate poll_rate(100);
+	while(rsPublisher.getNumSubscribers() == 0)
+		poll_rate.sleep();
+
+	// Create msg, with given info
+	std_msgs::Header msg;          
+    	msg.stamp = ros::Time::now();  
+		msg.seq = update_id;  		   
+		msg.frame_id = update_text;
+
+	// Publish notification (single msg)
+	if (ros::ok())	rsPublisher.publish(msg); 	
+		
+}	

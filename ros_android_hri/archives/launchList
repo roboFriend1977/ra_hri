@@ -1,0 +1,5 @@
+Roslaunch startup list 
+
+
+commandListener  		- to await commands from android / or ROS
+robotJobStatusPublisher - to publish current job status (so android can know what status its on) 

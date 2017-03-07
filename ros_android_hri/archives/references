@@ -1,0 +1,26 @@
+    //for (int i=0; i<H; i++)
+	//    for (int j=0; j<W; j++) // 0 -> 2 	
+            Arr[i][j] = array->data[i*W + j];  // similar trick from the publisher   
+            
+            
+            	// array.data is a vector = {1,2,3,4,5,6,7,8,9,10, ... } 
+	// data needs to be extracted from this vector, and placed in a HxW matrix, in the right locations
+	// W = 2 (always), representing x and y coordinates of each point 
+	// H = number of points = length of vector/2 = array.data.length / 2 = (because W is always = 2) 	
+	
+	// example : data(0), data(1) = x, y coor of point 1, 
+	
+	
+	
+	        /* 
+         0,0    = vec[0*2 + 0] = vec[0] = array[0][0];
+         0,1    = vec[0*2 + 1] = vec[1] = array[0][1];
+         1,0    = vec[1*2 + 0] = vec[2] = array[1][0];
+         1,1    = vec[1*2 + 1] = vec[3] = array[1][1];
+         2,0    = vec[2*2 + 0] = vec[4] = array[2][0];
+         2,1    = vec[2*2 + 1] = vec[5] = array[2][1];
+         3,0    = vec[3*2 + 0] = vec[6] = array[3][0];
+         3,1    = vec[3*2 + 1] = vec[7] = array[3][1];
+         4,0    = vec[4*2 + 0] = vec[8] = array[4][0];
+         4,1    = vec[4*2 + 1] = vec[9] = array[4][1];
+        */ 

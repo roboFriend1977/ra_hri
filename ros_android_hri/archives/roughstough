@@ -1,0 +1,41 @@
+/* Capture recieved message, 
+ * Based on message id, command_time,  select appropriate robot function 
+     
+   Robot function (id, command_time) 		
+		* Publish a zero (cmd_vel) message (to stop current movement)  		 
+		* Do task 
+		* Log time difference (current time - command time) 
+		* While doing task{
+				Update robot job status (here), and not in a different publisher 
+		  } 
+	
+	If currently not doing a job, robot is idle (status id = 0) 
+	* 
+	
+// Subscriber & publisher at the same node
+// terminating a task, if another task is called
+	// publishing a zero message, followed by the new movement command
+	// when a new node of the same name is called, the first one is stopped
+	// 
+
+// int command_id = AB 
+
+// int A = command_id / 10   // division of integers ignores all decimals
+// int B = command_id % 10   // modulus operator captures second digit	
+* 
+
+
+
+
+
+void commandCallback(const std_msgs::Header::ConstPtr& msg) { // message contains int
+	 
+  std::string ss; 
+  ss << " echo Turtlebot: " << msg->frame_id. << " ;";
+  ss << " postBashCommand=' minwin ; ";  
+  ss << " rosrun ros_android_hri robotJobStatusPublisher"; 
+  ss << " _status_id:="  <<  msg->seq;   
+  ss << " _status_name:=" << msg->frame_id.c_str() << " ' gnome-terminal";
+    
+  system(ss.str().c_str()); 
+}

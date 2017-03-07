@@ -1,0 +1,77 @@
+## robotPoseListener
+add_executable(robotPoseListener src/robotPoseListener.cpp)
+target_link_libraries(robotPoseListener ${catkin_LIBRARIES} )
+add_dependencies(robotPoseListener ros_android_hri_generate_messages_cpp)
+
+## noticeReceiver
+add_executable(noticeReceiver src/noticeReceiver.cpp)
+target_link_libraries(noticeReceiver ${catkin_LIBRARIES} )
+add_dependencies(noticeReceiver ros_android_hri_generate_messages_cpp)
+
+## noticePublisher
+add_executable(noticePublisher src/noticePublisher.cpp)
+target_link_libraries(noticePublisher ${catkin_LIBRARIES} )
+add_dependencies(noticePublisher ros_android_hri_generate_messages_cpp)
+
+## multiThread
+add_executable(multiThread src/multiThread.cpp)
+target_link_libraries(multiThread ${catkin_LIBRARIES} )
+add_dependencies(multiThread ros_android_hri_generate_messages_cpp)
+
+## multiPub
+add_executable(multiPub src/multiPub.cpp)
+target_link_libraries(multiPub ${catkin_LIBRARIES} )
+add_dependencies(multiPub ros_android_hri_generate_messages_cpp)
+
+## headerPub1
+add_executable(headerPub1 src/headerPub1.cpp)
+target_link_libraries(headerPub1 ${catkin_LIBRARIES} )
+add_dependencies(headerPub1 ros_android_hri_generate_messages_cpp)
+
+## headerPub2
+add_executable(headerPub2 src/headerPub2.cpp)
+target_link_libraries(headerPub2 ${catkin_LIBRARIES} )
+add_dependencies(headerPub2 ros_android_hri_generate_messages_cpp)
+
+## headerPub3
+add_executable(headerPub3 src/headerPub3.cpp)
+target_link_libraries(headerPub3 ${catkin_LIBRARIES} )
+add_dependencies(headerPub3 ros_android_hri_generate_messages_cpp)
+
+## headerPubOnce1
+add_executable(headerPubOnce1 src/headerPubOnce1.cpp)
+target_link_libraries(headerPubOnce1 ${catkin_LIBRARIES} )
+add_dependencies(headerPubOnce1 ros_android_hri_generate_messages_cpp)
+
+## headerPubOnce2
+add_executable(headerPubOnce2 src/headerPubOnce2.cpp)
+target_link_libraries(headerPubOnce2 ${catkin_LIBRARIES} )
+add_dependencies(headerPubOnce2 ros_android_hri_generate_messages_cpp)
+
+## headerPubOnce3
+add_executable(headerPubOnce3 src/headerPubOnce3.cpp)
+target_link_libraries(headerPubOnce3 ${catkin_LIBRARIES} )
+add_dependencies(headerPubOnce3 ros_android_hri_generate_messages_cpp)
+
+## rjsPublisher
+#add_executable(rjsPublisher src/state/rjsPublisher.cpp)
+#target_link_libraries(rjsPublisher ${catkin_LIBRARIES} )
+#add_dependencies(rjsPublisher ros_android_hri_generate_messages_cpp)
+
+## fakeSpeedPublisher
+#add_executable(fakeSpeedPublisher src/state/fakeSpeedPublisher.cpp)
+#target_link_libraries(fakeSpeedPublisher ${catkin_LIBRARIES} )
+#add_dependencies(fakeSpeedPublisher ros_android_hri_generate_messages_cpp)
+
+## fakeGPSPublisher
+#add_executable(fakeGPSPublisher src/state/fakeGPSPublisher.cpp)
+#target_link_libraries(fakeGPSPublisher ${catkin_LIBRARIES} )
+#add_dependencies(fakeGPSPublisher ros_android_hri_generate_messages_cpp)
+
+## fakeBatteryPublisher
+#add_executable(fakeBatteryPublisher src/state/fakeBatteryPublisher.cpp)
+#target_link_libraries(fakeBatteryPublisher ${catkin_LIBRARIES} )
+#add_dependencies(fakeBatteryPublisher ros_android_hri_generate_messages_cpp)
+
+
+
